@@ -1,0 +1,37 @@
+I had the opportunity to participate in LG Aimers 2026, an AI boot camp. 
+
+This online program was centered around LG's LLM model called Exaone. 
+Exaone stands for Expert AI for Everyone, which shows LG's focus on not only the performance 
+of the model, but also its size and lower hardware requirements which allows it to run efficiently
+on devices with low hardware capabilites. The goal of the online hackathon that took place in
+February perfectly depicts this point. The objective was to quantize the model while keeping an
+acceptable level of perfomance. The score symbolizes the ratio of the performance and size of the 
+submission when compared to the Exaone 4.0 1.2B baseline model, available on huggingface. The 
+score needed to successfully finish the program was a 0.5. 
+
+This was my first LLM model project, so I had a lot of difficulty getting through this program. 
+I immediately researched some of the best methods that are present online regarding compressing/
+quantizing an LLM model. I found the LLM compressor library, and spent a lot of time setting it 
+up and applying it to the model. I have also applied INT4 quantization, and the result was about a 
+75% size reduction, but the model seemed extremely slow as the score was 0.15. 
+
+Therefore, I moved to a simpler method, utilizing FP16 conversion that ultimately got me a score 
+of 0.51. With three submissions per day, and slow hardware (RTX 2060 mobile), it was difficult for 
+me to attempt more quantization methods. I have tried to install Ubuntu vLLM, in order to test my
+models locally before submission. However, I encountered a lot of errors and was very time
+consuming, and felt like a waste of time as it was my first usage of Ubuntu, and was very lost. 
+
+Ultimately, I was disappointed with my final score of 0.51, but I believe it was an invaluable 
+experience for me. As a sophomore, going from solving algorithm problems and simple projects to
+compressing and optimizing a LLM model was an eye opener for me. Although the submission I invested
+most of my time on (LLM compressor + INT4) ended up receiving an extremely low score, through this 
+process I have learned the significant loss of performance when reducing the size of the model,
+and the importance of hardware. If I were to participate in this program again, I would take 
+smaller steps. Instead of investing a lot of time on big adjustments to the model right away, I 
+would start with simple conversions (FP16) and work from there. 
+
+Overall, this program was a great introduction to LLMs, and with the difficulties I have 
+experienced there were no regrets. 
+
+exaone_baseline : Baseline model provided by LG (4.0 1.2B).
+exaone_optimized : Model created via quantize.py, utilizing FP16 conversion. 0.51 score. 
